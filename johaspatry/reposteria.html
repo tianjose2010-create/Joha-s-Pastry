@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Joha's Pastry - Lasanhas caseiras, massas, sobremesas artesanais e bebidas em Florianópolis. Entrega em todo Santa Catarina. Feito com amor e carinho!">
+  <meta name="keywords" content="lasanha, massa, sobremesa, alfajor, delivery florianopolis, johas pastry, comida caseira">
+  <meta name="author" content="Joha's Pastry">
+  <title>Joha's Pastry - Lasanhas, Massas, Sobremesas e Bebidas Artesanais</title>
+  <link rel="stylesheet" href="reposteria.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="shipping-info">
+      ENTREGA RÁPIDA EM TODO O ESTADO SANTA CATARINA - FLORIANÓPOLIS
+    </div>
+    <div class="logo-small">
+      <img src="logojohas.png" alt="Logo Joha's Pastry" class="logo-small-img">
+    </div>
+  </div>
+
+  <!-- Cabeçalho principal -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="logojohas.png" alt="Logo Joha's Pastry" class="logo">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#catalogo" class="active">INÍCIO</a></li>
+        <li><a href="#lasanhas">LASANHAS</a></li>
+        <li><a href="#massas">MASSAS</a></li>
+        <li><a href="#sobremesas">SOBREMESAS</a></li>
+        <li><a href="#bebidas">BEBIDAS</a></li>
+        <li><a href="#contato">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner principal -->
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1>Joha's Pastry</h1>
+      <p>Lasanhas, Massas, Comidas Caseiras, Sobremesas Artesanais e muito mais feito com muito amor e carinho ❤️</p>
+      <div class="social-contact">
+        <a href="https://wa.me/554888247051" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img src="whatsapp.png" alt="WhatsApp" class="icono-red">
+        </a>
+        <span class="phone-number">48 8824-7051</span>
+        <a href="https://www.instagram.com/johas_pastry/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="ig.png" alt="Instagram" class="icono-red">
+        </a>
+        <a href="https://www.tiktok.com/@johapastry" target="_blank" rel="noopener" aria-label="TikTok">
+          <img src="tiktok.png" alt="TikTok" class="icono-red">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informações abaixo do banner -->
+  <div class="info-box">
+    <p>Peça com antecedência! Pedido mínimo de 1 unidade. Entregamos em toda a região.</p>
+  </div>
+
+  <!-- Título de categorias -->
+  <div class="section-title">
+    <h2>NOSSOS PRODUTOS</h2>
+  </div>
+
+  <!-- Contenedor principal de las categorías -->
+  <main id="catalogo" class="container">
+
+    <!-- Seção LASANHAS -->
+    <h2 id="lasanhas" class="category-title">Lasanhas</h2>
+    <div class="gallery" id="lasanhas-gallery"></div>
+
+    <!-- Seção MASSAS -->
+    <h2 id="massas" class="category-title">Massas</h2>
+    <div class="gallery" id="massas-gallery"></div>
+
+    <!-- Seção SOBREMESAS -->
+    <h2 id="sobremesas" class="category-title">Sobremesas</h2>
+    <div class="gallery" id="sobremesas-gallery"></div>
+
+    <!-- Seção BEBIDAS -->
+    <h2 id="bebidas" class="category-title">Bebidas</h2>
+    <div class="gallery" id="bebidas-gallery"></div>
+
+  </main>
+
+  <!-- Modal de produto -->
+  <div id="productModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeProductModal()">&times;</span>
+      <h2 id="modalProductName"></h2>
+      <img id="modalProductImage" src="" alt="" loading="lazy">
+      <p><strong>Preço:</strong> <span id="modalProductPrice"></span></p>
+      <p><strong>Descrição:</strong> <span id="modalProductDescription"></span></p>
+      <div class="modal-actions">
+        <button class="whatsapp-btn" onclick="sendProductToWhatsApp()">Pedir pelo WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão flutuante de WhatsApp (só em mobile) -->
+  <a href="https://wa.me/554888247051?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener"
+     aria-label="Pedir por WhatsApp">
+    <img src="whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- Seção de Negócios (abaixo de tudo, pero debajo de la descripción) -->
+<section class="business-section-bottom">
+  <div class="business-content">
+    <h3>Para Negócios</h3>
+    <p>Quer vender nossos Alfajores no seu negócio?</p>
+    <p>Oferecemos os melhores Alfajores artesanais para revenda! Ideal para cafeterias, padarias, lojas de conveniência e eventos.</p>
+    <p>Produtos disponíveis para revenda:</p>
+    <ul>
+      <li>Alfajor de Chocolate com Doce de Leite</li>
+      <li>Alfajor Triplo Chocolate</li>
+      <li>Alfajor Tradicional - Doce de Leite e Coco</li>
+    
+    <button class="business-whatsapp-btn" onclick="sendBusinessMessage()">
+      Falar com a Joha's Pastry no WhatsApp
+    </button>
+  </ul>
+  </div>
+</section>
+
+
+  <!-- Seção de Contatos y Delivery (abaixo do botão de negócio) -->
+  <section class="contact-delivery-section">
+    <div class="contact-box">
+      <div class="contact-item">
+        <span class="contact-icon">💬</span>
+        <span class="contact-text">WhatsApp: <a href="https://wa.me/554888247051" target="_blank" rel="noopener">Clique aqui</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📸</span>
+        <span class="contact-text">Instagram: <a href="https://www.instagram.com/johas_pastry/" target="_blank" rel="noopener">@johas_pastry</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🎵</span>
+        <span class="contact-text">TikTok: <a href="https://www.tiktok.com/@johapastry" target="_blank" rel="noopener">@johapastry</a></span>
+      </div>
+    </div>
+    <div class="delivery-info">
+      <h4>📍 Entrega em Santa Catarina</h4>
+      <p>Entregamos em toda a região de <strong>Florianópolis</strong>. Para entregas fora de Florianópolis, dentro de Santa Catarina, pode haver <strong>taxa adicional</strong> ou demora no prazo. Você também pode buscar seu pedido diretamente na loja!</p>
+    </div>
+  </section>
+
+  <script src="reposteria.js"></script>
+</body>
+</html>
